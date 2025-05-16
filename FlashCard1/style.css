@@ -1,0 +1,224 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background: #f5f5f5;
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2em 1em;
+  }
+  
+  .app-container {
+    width: 100%;
+    max-width: 480px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgb(0 0 0 / 0.1);
+    padding: 1.5em;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  #add-btn {
+    background-color: #2a2a2a;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  #add-btn:hover {
+    background-color: #444;
+  }
+  
+  /* Flashcard */
+  .flashcard {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    perspective: 1000px;
+    cursor: pointer;
+    margin-bottom: 1em;
+  }
+  
+  .flashcard > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    box-shadow: 0 0 10px rgb(0 0 0 / 0.15);
+    padding: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    user-select: none;
+    transition: transform 0.6s ease;
+  }
+  
+  .flashcard .front {
+    background-color: #2a2a2a;
+  }
+  
+  .flashcard .back {
+    background-color: #4a90e2;
+    transform: rotateY(180deg);
+  }
+  
+  .flashcard.flipped .front {
+    transform: rotateY(180deg);
+  }
+  
+  .flashcard.flipped .back {
+    transform: rotateY(0);
+  }
+  
+  /* Navigation */
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+  
+  .navigation button {
+    background-color: #2a2a2a;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1.2em;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navigation button:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+  }
+  
+  .navigation button:hover:not(:disabled) {
+    background-color: #444;
+  }
+  
+  #progress {
+    font-weight: 600;
+  }
+  
+  /* Form Section */
+  #form-section {
+    background: #fafafa;
+    padding: 1.2em;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgb(0 0 0 / 0.1);
+    margin-top: 1em;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #form-section h2 {
+    margin-bottom: 0.8em;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  
+  #card-form label {
+    display: block;
+    margin-bottom: 0.3em;
+    font-weight: 600;
+  }
+  
+  #card-form input,
+  #card-form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    border: 1.5px solid #ccc;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+  }
+  
+  #card-form input:focus,
+  #card-form textarea:focus {
+    outline: none;
+    border-color: #2a2a2a;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.8em;
+  }
+  
+  .form-buttons button {
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6em 1.2em;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-buttons button[type="submit"] {
+    background-color: #2a2a2a;
+    color: white;
+  }
+  
+  .form-buttons button[type="submit"]:hover {
+    background-color: #444;
+  }
+  
+  .form-buttons button#cancel-btn {
+    background-color: #ccc;
+  }
+  
+  .form-buttons button#cancel-btn:hover {
+    background-color: #aaa;
+  }
+  
+  /* Responsive */
+  @media (max-width: 400px) {
+    .flashcard {
+      height: 150px;
+    }
+  
+    header h1 {
+      font-size: 1.2rem;
+    }
+  
+    #add-btn, .navigation button, .form-buttons button {
+      font-size: 0.9rem;
+      padding: 0.4em 1em;
+    }
+  }
+  

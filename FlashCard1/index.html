@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vocabulary Flashcards</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+
+    <header>
+      <h1>Vocabulary Flashcards</h1>
+      <button id="add-btn">➕ Add Card</button>
+    </header>
+
+    <main>
+      <div id="flashcard" class="flashcard">
+        <div class="front"></div>
+        <div class="back"></div>
+      </div>
+
+      <div class="navigation">
+        <button id="prev-btn">⬅ Prev</button>
+        <span id="progress">0 / 0</span>
+        <button id="next-btn">Next ➡</button>
+      </div>
+    </main>
+
+    <section id="form-section" class="hidden">
+      <h2>Add / Edit Flashcard</h2>
+      <form id="card-form">
+        <label for="word-input">Word</label>
+        <input type="text" id="word-input" required />
+        <label for="meaning-input">Meaning</label>
+        <textarea id="meaning-input" rows="3" required></textarea>
+        <div class="form-buttons">
+          <button type="submit">Save</button>
+          <button type="button" id="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
